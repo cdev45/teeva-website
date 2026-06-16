@@ -9,7 +9,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "wouter";
 
-const LOGO_URL = "/manus-storage/teeva-logo_18bfea62.png";
+const LOGO_URL = "/teeva-logo.png";
 
 const osTiers = [
   { name: "Foundation OS", href: "/os/foundation", desc: "From $8,000/month" },
