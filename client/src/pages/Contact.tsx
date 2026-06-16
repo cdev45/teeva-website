@@ -53,7 +53,7 @@ export default function Contact() {
           </h1>
           <div className="teeva-gold-line-left" />
           <p className="text-white/80 text-lg leading-relaxed max-w-xl mt-6" style={{ fontFamily: "'Inter', sans-serif" }}>
-            Book a complimentary Strategy Assessment or send us a message. We respond to all qualified inquiries within one business day.
+            Book a complimentary Commercial Gap Analysis or send us a message. We respond to all qualified inquiries within one business day.
           </p>
         </div>
       </section>
@@ -80,7 +80,7 @@ export default function Contact() {
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div className="fade-up">
-                    <p className="teeva-section-label mb-6">Strategy Assessment Request</p>
+                    <p className="teeva-section-label mb-6">Commercial Gap Analysis Request</p>
                   </div>
 
                   <div className="fade-up grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -172,13 +172,13 @@ export default function Contact() {
                         className={inputClass}
                         style={inputStyle}
                       >
-                        <option value="">Select service</option>
-                        <option value="fractional-cio">Fractional CIO (vCIO)</option>
-                        <option value="cybersecurity">Cybersecurity Advisory (vCISO)</option>
-                        <option value="ai-transformation">AI Transformation</option>
-                        <option value="compliance">Compliance Advisory</option>
-                        <option value="go-to-market">Go-to-Market Advisory</option>
-                        <option value="not-sure">Not Sure</option>
+                        <option value="">Select a reason</option>
+                        <option value="join-community">Join the Community</option>
+                        <option value="resource-question">Resource Question</option>
+                        <option value="foundation-os">Foundation OS Inquiry</option>
+                        <option value="growth-os">Growth OS Inquiry</option>
+                        <option value="enterprise-os">Enterprise OS Inquiry</option>
+                        <option value="other">Other</option>
                       </select>
                     </div>
                   </div>
@@ -222,10 +222,10 @@ export default function Contact() {
                     className="text-xl font-bold text-white mb-3"
                     style={{ fontFamily: "'Cormorant Garamond', serif" }}
                   >
-                    Schedule a Strategy Assessment
+                    Schedule a Commercial Gap Analysis
                   </h3>
                   <p className="text-white/60 text-sm leading-relaxed mb-6" style={{ fontFamily: "'Inter', sans-serif" }}>
-                    Book a 30-minute complimentary Strategy Assessment directly on our calendar.
+                    Book a 30-minute complimentary Commercial Gap Analysis directly on our calendar.
                   </p>
                   <a
                     href={BOOKING_LINK}
@@ -252,23 +252,12 @@ export default function Contact() {
                       </a>
                     </div>
                     <div>
-                      <p className="text-xs uppercase tracking-wide mb-1" style={{ color: "#4A5568", fontFamily: "'Inter', sans-serif" }}>Location</p>
+                      <p className="text-xs uppercase tracking-wide mb-1" style={{ color: "#4A5568", fontFamily: "'Inter', sans-serif" }}>Address</p>
                       <p className="text-sm" style={{ color: "#0F2439", fontFamily: "'Inter', sans-serif" }}>
-                        St. Augustine, FL
+                        Arcway Industries LLC dba The Elite Executive Advantage (TEEVA)<br />St. Augustine, FL
                       </p>
                     </div>
-                    <div>
-                      <p className="text-xs uppercase tracking-wide mb-1" style={{ color: "#4A5568", fontFamily: "'Inter', sans-serif" }}>LinkedIn</p>
-                      <a
-                        href="https://www.linkedin.com/in/cdenoia"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-sm font-medium hover:underline"
-                        style={{ color: "#0F2439", fontFamily: "'Inter', sans-serif" }}
-                      >
-                        linkedin.com/in/cdenoia
-                      </a>
-                    </div>
+
                   </div>
                 </div>
               </div>

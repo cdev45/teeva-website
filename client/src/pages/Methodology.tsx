@@ -25,11 +25,11 @@ const caseStudies = [
 ];
 
 const pillars = [
-  { name: "Fractional CIO", desc: "IT Strategy & Revenue Architecture", color: "#0F2439" },
-  { name: "vCISO", desc: "Security Design & Risk Management", color: "#1A365D" },
-  { name: "AI Transformation", desc: "Outcome-Accountable AI Adoption", color: "#0F2439" },
-  { name: "Compliance", desc: "Revenue-Enabling Compliance Programs", color: "#1A365D" },
-  { name: "Go-to-Market", desc: "Technical Capability as Differentiator", color: "#0F2439" },
+  { name: "Technology Strategy", desc: "Revenue Architecture & Market Expansion", color: "#0F2439" },
+  { name: "AI & Agentic AI", desc: "OpEx Reduction & Revenue Automation", color: "#1A365D" },
+  { name: "Security & Compliance", desc: "Market Access & Churn Defense", color: "#0F2439" },
+  { name: "Go-to-Market", desc: "Top-Line Growth & Competitive Strategy", color: "#1A365D" },
+  { name: "Commercial Advisory", desc: "EBITDA Expansion & Valuation Enhancement", color: "#0F2439" },
 ];
 
 export default function Methodology() {
@@ -85,10 +85,10 @@ export default function Methodology() {
         <div className="py-20 container max-w-4xl">
           <div className="fade-up">
             <blockquote className="teeva-pull-quote text-2xl md:text-3xl mb-8">
-              "Most companies are forced to hire one firm to build their systems and another firm to secure them. At TEEVA, we eliminate that friction."
+              "Most advisory firms help you manage technology. We use technology to win markets, expand revenue, and build enterprise value. That is a fundamentally different mandate."
             </blockquote>
             <p className="text-base leading-relaxed" style={{ color: "#4A5568", fontFamily: "'Inter', sans-serif" }}>
-              The integrated CIO/CISO methodology is not a marketing claim — it is a structural advantage. When the same firm that architects your IT strategy also designs your security posture, the result is a cohesive, revenue-enabling infrastructure that neither discipline could produce independently. Security becomes a design requirement, not an afterthought. Compliance becomes a sales accelerator, not a cost center. AI adoption happens without creating new vulnerabilities. The five service pillars are not separate offerings — they are interconnected disciplines within a single, unified methodology.
+              TEEVA's integrated methodology is built on a single conviction: technology is the underlying foundation of the modern economy, and the firms that master it gain a structural commercial advantage over those that do not. We do not manage IT. We architect commercial outcomes. Revenue growth, market expansion, churn defense, OpEx reduction, EBITDA expansion, and valuation enhancement are the deliverables. Technology strategy, AI, Agentic AI, security architecture, compliance programs, and go-to-market execution are the instruments. The five service pillars are not separate offerings — they are interconnected levers within a single, unified commercial methodology.
             </p>
           </div>
         </div>
@@ -120,11 +120,13 @@ export default function Methodology() {
                 </thead>
                 <tbody>
                   {[
-                    ["Integrated CIO/CISO Capability", "✗", "Partial", "✗", "✓"],
+                    ["Commercial Outcomes Mandate", "✗", "✗", "✗", "✓"],
+                    ["Revenue & Market Expansion Focus", "✗", "✗", "Partial", "✓"],
+                    ["AI & Agentic AI Strategy", "Partial", "✗", "✗", "✓"],
+                    ["EBITDA & Valuation Advisory", "✗", "✗", "✗", "✓"],
+                    ["Integrated Technology + GTM", "✗", "✗", "✗", "✓"],
                     ["Mid-Market Focus", "✗", "✓", "Partial", "✓"],
                     ["Outcome-Accountable Retainers", "✗", "✗", "✗", "✓"],
-                    ["AI-Native Security Integration", "Partial", "✗", "✗", "✓"],
-                    ["Compliance as Revenue Enabler", "✗", "✗", "✗", "✓"],
                     ["Cost Structure", "$500K+", "Low / MSP-bundled", "High / fragmented", "Mid-market optimized"],
                   ].map(([capability, big4, msp, network, teeva], i) => (
                     <tr
@@ -240,7 +242,7 @@ export default function Methodology() {
               </div>
 
               <p className="text-center text-sm mt-6" style={{ color: "#4A5568", fontFamily: "'Inter', sans-serif" }}>
-                Each pillar is interconnected within the TEEVA methodology. Security informs IT strategy. Compliance enables revenue. AI transformation is governed by risk management. Go-to-market is powered by technical differentiation.
+                Each pillar is interconnected within the TEEVA commercial methodology. Technology strategy opens markets. AI reduces costs and automates revenue. Security and compliance unlock enterprise buyers. Go-to-market execution converts capability into closed deals. Commercial advisory ensures every initiative compounds toward EBITDA expansion and valuation enhancement.
               </p>
             </div>
           </div>
@@ -258,7 +260,7 @@ export default function Methodology() {
           </h2>
           <div className="teeva-gold-line" />
           <p className="text-white/70 text-base mt-6 mb-8 max-w-xl mx-auto" style={{ fontFamily: "'Inter', sans-serif" }}>
-            Book a complimentary Strategy Assessment to discover how the TEEVA integrated methodology can transform your IT and security into a primary revenue driver.
+            Book a complimentary Strategy Assessment to discover how the TEEVA commercial methodology can expand your revenue, unlock new markets, reduce OpEx, and enhance your firm's enterprise valuation.
           </p>
           <Link href="/contact" className="teeva-btn-gold">
             Book a Strategy Assessment

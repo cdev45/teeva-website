@@ -13,6 +13,8 @@ export default function Cookies() {
       </section>
       <section className="py-16 bg-white">
         <div className="container max-w-3xl" style={{ fontFamily: "'Inter', sans-serif", color: "#4A5568", lineHeight: "1.8" }}>
+          <p className="mb-8" style={{ borderLeft: "3px solid #D4AF37", paddingLeft: "1rem" }}>This Cookie Policy is maintained by Arcway Industries LLC dba The Elite Executive Advantage (TEEVA), located in St. Augustine, Florida, which operates the website at teeva.co. This policy explains how we use cookies and similar tracking technologies on our website.</p>
+
           <h2 style={{ fontFamily: "'Cormorant Garamond', serif", color: "#0F2439", fontSize: "1.5rem", marginBottom: "0.75rem" }}>1. What Are Cookies</h2>
           <p className="mb-6">Cookies are small text files placed on your device when you visit a website. They allow the website to remember your preferences and improve your experience. Cookies do not contain personally identifiable information unless you have provided it to us.</p>
 

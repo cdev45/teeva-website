@@ -10,10 +10,10 @@ const categories = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z" />
       </svg>
     ),
-    name: "Articles",
-    description: "In-depth analysis and practical insights across IT strategy, cybersecurity, compliance, AI adoption, and executive leadership. Written by practitioners, for practitioners.",
-    cta: "Browse Articles",
-    href: "#articles",
+    name: "Executive Insights",
+    description: "In-depth analysis and practical insights across technology strategy, AI, cybersecurity, compliance, and executive leadership. Teardowns, frameworks, and strategies written by practitioners, for practitioners.",
+    cta: "Browse Insights",
+    href: "/insights",
   },
   {
     icon: (
@@ -101,11 +101,11 @@ export default function Resources() {
             className="text-white font-bold leading-tight mb-4"
             style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(2.5rem, 6vw, 5rem)" }}
           >
-            Executive Resources.
+            The Resource Library.
           </h1>
           <div className="teeva-gold-line-left" />
           <p className="text-white/80 text-lg leading-relaxed max-w-2xl mt-6" style={{ fontFamily: "'Inter', sans-serif" }}>
-            A curated library of downloadable templates, learning guides, and professional resources designed to help executives move faster and with greater acuity.
+            Downloadable templates, learning guides, and professional resources designed to help you move faster. Everything in the library is free to community members.
           </p>
         </div>
       </section>
@@ -143,13 +143,23 @@ export default function Resources() {
                 <p className="text-sm leading-relaxed mb-6" style={{ color: "#4A5568", fontFamily: "'Inter', sans-serif" }}>
                   {cat.description}
                 </p>
-                <button
-                  onClick={() => setGateOpen(true)}
-                  className="text-sm font-semibold transition-colors duration-150"
-                  style={{ color: "#D4AF37", fontFamily: "'Inter', sans-serif", letterSpacing: "0.05em" }}
-                >
-                  {cat.cta} →
-                </button>
+                {cat.href.startsWith('/') && !cat.href.startsWith('/#') ? (
+                  <Link
+                    href={cat.href}
+                    className="text-sm font-semibold transition-colors duration-150"
+                    style={{ color: "#D4AF37", fontFamily: "'Inter', sans-serif", letterSpacing: "0.05em" }}
+                  >
+                    {cat.cta} →
+                  </Link>
+                ) : (
+                  <button
+                    onClick={() => setGateOpen(true)}
+                    className="text-sm font-semibold transition-colors duration-150"
+                    style={{ color: "#D4AF37", fontFamily: "'Inter', sans-serif", letterSpacing: "0.05em" }}
+                  >
+                    {cat.cta} →
+                  </button>
+                )}
               </div>
             ))}
           </div>
@@ -268,10 +278,10 @@ export default function Resources() {
       <section className="py-16" style={{ backgroundColor: "#0F2439" }}>
         <div className="container text-center">
           <p className="text-white/70 text-base mb-4" style={{ fontFamily: "'Inter', sans-serif" }}>
-            Looking for strategic advisory services?
+            Ready for done-for-you implementation?
           </p>
-          <Link href="/advisory" className="teeva-btn-gold text-xs">
-            Explore Advisory Services →
+          <Link href="/os" className="teeva-btn-gold text-xs">
+            Explore the Commercial Growth OS →
           </Link>
         </div>
       </section>

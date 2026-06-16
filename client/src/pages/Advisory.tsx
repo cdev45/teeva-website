@@ -8,40 +8,40 @@ const METHODOLOGY_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663490541
 const services = [
   {
     name: "Fractional CIO (vCIO)",
-    tagline: "Board-level IT leadership that transforms technology into enterprise value.",
-    description: "Mid-market companies need board-level IT leadership to adopt AI, modernize infrastructure, and open new markets. Our vCIO service is built on the 'Innovate and Monetize' model — we architect IT strategy that directly opens markets, closes deals, and creates enterprise value.",
+    tagline: "Board-level technology leadership that drives revenue, expands markets, and builds enterprise value.",
+    description: "Mid-market companies need board-level technology leadership to adopt AI, execute commercial strategy, and open new markets. Our vCIO service is built on the 'Innovate and Monetize' model — we architect technology strategy that directly expands top-line revenue, reduces OpEx, and creates measurable enterprise value.",
     href: "/advisory/fractional-cio",
     image: ADVISORY_IMAGE,
     anchor: "$7,000/month",
   },
   {
     name: "Cybersecurity Advisory (vCISO)",
-    tagline: "Board-ready security leadership natively integrated with our CIO methodology.",
-    description: "We provide board-ready security leadership from a practitioner who has built inaugural FedRAMP and SOC 2 authorizations from the ground up. Security is a design requirement, not an afterthought. We deploy Zero-Trust frameworks and manage GovRAMP, FedRAMP, SOC 2, and HIPAA authorizations.",
+    tagline: "Security architecture that unlocks enterprise markets and accelerates commercial sales cycles.",
+    description: "We transform security from a cost center into a commercial accelerator. FedRAMP, SOC 2, and Zero-Trust architecture are not compliance checkboxes — they are the credentials that unlock federal markets, close enterprise deals, and defend against the churn that follows a breach. We build security programs that generate revenue.",
     href: "/advisory/cybersecurity",
     image: CYBER_IMAGE,
     anchor: "$6,000/month",
   },
   {
     name: "AI Transformation",
-    tagline: "Outcome-accountable AI adoption that treats security as a design requirement.",
-    description: "Ninety-five percent of enterprise AI pilots fail to scale. We deliver outcome-accountable AI adoption strategies that treat security and compliance as design requirements from day one. We architect right-sized AI solutions that drive measurable ROI without the enterprise bloat.",
+    tagline: "AI and Agentic AI strategies that reduce OpEx, automate revenue operations, and expand EBITDA.",
+    description: "Ninety-five percent of enterprise AI pilots fail to scale because they are technology projects, not commercial strategies. We architect AI and Agentic AI programs that directly reduce operational costs, automate revenue-generating workflows, and expand EBITDA — with governance and security built in from day one.",
     href: "/advisory/ai-transformation",
     image: METHODOLOGY_IMAGE,
     anchor: "$6,000/month",
   },
   {
     name: "Compliance Advisory",
-    tagline: "Proactive compliance programs that directly unblock enterprise sales cycles.",
-    description: "Mid-market companies are losing enterprise deals because they cannot produce the compliance documentation that enterprise buyers require. We transform compliance from a cost center into a revenue enabler, building HIPAA, CMMC, SOC 2, and FedRAMP programs that accelerate sales.",
+    tagline: "Compliance programs that open new markets and accelerate enterprise revenue.",
+    description: "Mid-market companies are losing enterprise deals and federal contracts because they lack the compliance posture that sophisticated buyers require. We build FedRAMP, SOC 2, HIPAA, and CMMC programs that directly unlock new market categories, shorten sales cycles, and convert compliance investment into top-line revenue growth.",
     href: "/advisory/compliance",
     image: ADVISORY_IMAGE,
     anchor: "$5,000/month",
   },
   {
     name: "Go-to-Market Advisory",
-    tagline: "Strategic revenue growth leveraging technical capabilities as competitive differentiators.",
-    description: "Fifty-five percent of mid-market companies miss quarterly revenue forecasts by more than ten percent. We architect strategic revenue growth that leverages technical capabilities and compliance posture as competitive differentiators, translating security architecture into closed commercial deals.",
+    tagline: "Commercial strategy that expands top-line revenue, defends market share, and reduces churn.",
+    description: "Fifty-five percent of mid-market companies miss quarterly revenue forecasts by more than ten percent. We architect commercial growth strategies — ICP definition, competitive positioning, enterprise sales cycle design, and customer retention frameworks — that expand top-line revenue, defend against churn, and build the market presence that sustains long-term valuation.",
     href: "/advisory/go-to-market",
     image: CYBER_IMAGE,
     anchor: "$5,000/month",
@@ -91,7 +91,7 @@ export default function Advisory() {
           </h1>
           <div className="teeva-gold-line-left" />
           <p className="text-white/80 text-lg leading-relaxed max-w-2xl mt-6" style={{ fontFamily: "'Inter', sans-serif" }}>
-            We deliver high-margin professional services designed specifically for mid-market companies. Our integrated approach eliminates the friction of hiring separate firms to build systems and secure them, providing a unified strategy that accelerates revenue and mitigates risk.
+            We architect commercial outcomes for mid-market companies through technology strategy, AI transformation, and market execution. Our integrated approach delivers what boards and CEOs demand most: expanded top-line revenue, new market access, churn defense, reduced OpEx, stronger EBITDA, and enhanced valuation multiples.
           </p>
         </div>
       </section>

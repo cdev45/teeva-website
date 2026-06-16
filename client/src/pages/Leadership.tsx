@@ -57,7 +57,7 @@ export default function Leadership() {
               <div
                 className="aspect-square bg-cover bg-center bg-top flex items-end"
                 style={{
-                  backgroundImage: `url(https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&q=80)`,
+                  backgroundImage: `url(/manus-storage/chris-denoia-headshot_ca084511.webp)`,
                   backgroundColor: "#F4F5F7",
                 }}
               >
@@ -111,17 +111,17 @@ export default function Leadership() {
 
               <div className="fade-up mt-8 space-y-6">
                 <p className="text-base leading-relaxed" style={{ color: "#4A5568", fontFamily: "'Inter', sans-serif" }}>
-                  Chris DeNoia is the Founder and Principal Advisor of TEEVA. He is a dual-threat CIO and CISO with over 20 years of practitioner-level experience transforming enterprise IT and security from a cost center into a primary revenue driver. He recently architected the infrastructure for a net-new Commercial Division, capturing $42M in enterprise value and unlocking massive federal and enterprise markets.
+                  Chris DeNoia is the Founder and Principal Advisor of TEEVA. He is a technology strategist and commercial architect with over 20 years of practitioner-level experience delivering measurable commercial outcomes through technology strategy, AI, and market execution. He recently architected the infrastructure and commercial strategy for a net-new Commercial Division, capturing $42M in enterprise value and unlocking massive federal and enterprise markets.
                 </p>
                 <p className="text-base leading-relaxed" style={{ color: "#4A5568", fontFamily: "'Inter', sans-serif" }}>
-                  Boards and CEOs engage Chris to solve a specific, high-stakes problem: scaling complex IT infrastructure while ensuring it remains virtually immune to breach and strictly compliant with federal and commercial mandates.
+                  Boards and CEOs engage Chris to solve a specific, high-stakes problem: how to use technology, AI, and commercial strategy to expand top-line revenue, unlock new markets, reduce operational costs, and enhance enterprise valuation — while ensuring the infrastructure that powers growth is secure, compliant, and built to scale.
                 </p>
 
                 <div className="space-y-6 mt-8">
                   {[
                     {
-                      title: "Revenue-Enabling Security and Strategy",
-                      description: "Partnering directly with sales and product teams to translate technical security architecture into closed commercial deals. Chris has a proven track record of leveraging compliance achievements — FedRAMP, SOC 2 — as direct revenue accelerators.",
+                      title: "Revenue-Enabling Strategy",
+                      description: "Partnering with boards, CEOs, and commercial leadership to architect technology strategies that directly drive revenue growth, defend market share, and expand EBITDA. Chris translates IT and security investments into measurable commercial outcomes — accelerating enterprise sales cycles, opening new market categories, and building the infrastructure that sustains long-term enterprise valuation.",
                     },
                     {
                       title: "Digital Transformation and Innovation",
@@ -150,9 +150,7 @@ export default function Leadership() {
                   ))}
                 </div>
 
-                <p className="text-xs mt-4 italic" style={{ color: "#4A5568", fontFamily: "'Inter', sans-serif" }}>
-                  Note: A professional headshot placeholder is displayed above. Please provide your official headshot to replace it.
-                </p>
+
               </div>
             </div>
           </div>

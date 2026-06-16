@@ -14,7 +14,7 @@ export default function Terms() {
       <section className="py-16 bg-white">
         <div className="container max-w-3xl" style={{ fontFamily: "'Inter', sans-serif", color: "#4A5568", lineHeight: "1.8" }}>
           <h2 style={{ fontFamily: "'Cormorant Garamond', serif", color: "#0F2439", fontSize: "1.5rem", marginBottom: "0.75rem" }}>1. Acceptance of Terms</h2>
-          <p className="mb-6">By accessing and using the TEEVA website at teeva.co, you accept and agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our website.</p>
+          <p className="mb-6">These Terms of Service constitute a binding agreement between you and Arcway Industries LLC dba The Elite Executive Advantage (TEEVA), located in St. Augustine, Florida, which operates the website at teeva.co. By accessing and using this website, you accept and agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our website.</p>
 
           <h2 style={{ fontFamily: "'Cormorant Garamond', serif", color: "#0F2439", fontSize: "1.5rem", marginBottom: "0.75rem" }}>2. Use of the Website</h2>
           <p className="mb-6">You may use this website for lawful purposes only. You agree not to use the site in any way that violates applicable laws, infringes on intellectual property rights, or transmits harmful or malicious content. TEEVA reserves the right to terminate access to the website for violations of these terms.</p>

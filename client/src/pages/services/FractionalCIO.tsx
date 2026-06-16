@@ -1,26 +1,28 @@
-import ServicePage from "../../components/ServicePage";
+import ServicePage from "@/components/ServicePage";
 
-const HERO_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663490541487/oNZTLoLQKpWBdVZWntoGbm/teeva-hero-main-etAuiCGcpMpRU7MvCHPuw4.webp";
+const HERO = "https://d2xsxph8kpxj0f.cloudfront.net/310519663490541487/oNZTLoLQKpWBdVZWntoGbm/teeva-hero-advisory-a3GjPVzdQihzX8W5EQkzEm.webp";
 
 export default function FractionalCIO() {
   return (
     <ServicePage
-      label="Fractional CIO (vCIO)"
-      headline="Board-Level IT Strategy."
-      subheadline="Transform your technology stack from a cost center into a primary revenue driver. We architect strategy that opens markets and creates enterprise value."
-      problem="Mid-market companies often face a difficult choice: hire a highly compensated full-time CIO, or delegate critical technology decisions to operational managers or third-party MSPs. This compromise leads to a fragmented technology stack, unpredictable spending, and a reactive IT posture that fails to align with strategic business objectives. When technology is managed purely as an operational utility rather than a strategic asset, enterprise growth stalls and technical debt rapidly compounds."
-      solution="TEEVA delivers board-level IT leadership on a fractional basis, providing the strategic oversight and governance of an enterprise CIO without the full-time executive overhead. We operate as your dedicated technology partner, meticulously aligning your IT infrastructure with your revenue targets, streamlining complex operations, and aggressively positioning your organization for scale, acquisition, or market dominance."
+      label="Advisory Services"
+      headline="Fractional CIO (vCIO)"
+      subheadline="Board-level technology leadership that expands revenue, unlocks markets, and builds enterprise value."
+      problem="Mid-market companies need board-level technology leadership to adopt AI, execute commercial strategy, and open new markets. A full-time CIO costs $250,000 to $450,000 per year, a budget most mid-market companies cannot justify. The result is that technology decisions are made reactively, by committee, or delegated to vendors with conflicts of interest — and the commercial opportunities that technology could unlock are left on the table."
+      solution="We provide Fractional CIO leadership built on the 'Innovate and Monetize' model. We architect technology strategies that directly expand top-line revenue, unlock new market categories, reduce OpEx through automation and vendor optimization, and create measurable enterprise value. We have a proven track record of architecting the infrastructure that captured $42M in enterprise value and unlocked federal and enterprise markets that were previously inaccessible."
       deliverables={[
-        "Comprehensive IT Strategy & Roadmap Alignment",
-        "Strategic Vendor Management & Contract Negotiation",
-        "Technology Budgeting & Enterprise Cost Optimization",
-        "Board-Level Communication & Executive Reporting",
-        "Digital Transformation & Cloud Adoption Initiatives",
-        "M&A Technology Due Diligence & Integration Planning"
+        "Commercial Technology Roadmap (12–24 month)",
+        "Revenue Architecture Design",
+        "AI and Agentic AI Integration Strategy",
+        "Vendor Management and Contract Negotiation",
+        "Technology Budget Optimization and OpEx Reduction",
+        "Cloud Architecture (AWS/Google)",
+        "M&A Technology Integration",
+        "Board-Level Technology and Commercial Reporting",
       ]}
-      anchor="Fractional Retainer"
-      retainerCopy="Our vCIO engagements are structured as predictable, fixed monthly retainers. You gain immediate, ongoing access to executive IT leadership, strategic roadmapping, and vendor oversight without the financial burden of a full-time executive compensation package, benefits, or equity grants."
-      heroImage={HERO_IMAGE}
+      retainerCopy="Fractional CIO advisory engagements begin at $7,000/month. Scope and investment are tailored to the complexity of the engagement — contact us for a custom assessment. We do not offer hourly consulting or one-time project engagements."
+      anchor="From $7,000/month"
+      heroImage={HERO}
     />
   );
 }

@@ -171,11 +171,11 @@ export default function ServicePage({
             className="text-4xl font-bold mb-4"
             style={{ fontFamily: "'Cormorant Garamond', serif", color: "#0F2439" }}
           >
-            Secure Your Risk. Accelerate Your Revenue.
+            Expand Revenue. Unlock Markets. Build Value.
           </h2>
           <div className="teeva-gold-line" />
           <p className="text-base mt-6 mb-8 max-w-xl mx-auto" style={{ color: "#4A5568", fontFamily: "'Inter', sans-serif" }}>
-            Book a complimentary Strategy Assessment to discuss your specific challenges and how our integrated advisory methodology can deliver measurable outcomes.
+            Book a complimentary Strategy Assessment to discuss how TEEVA can expand your top-line revenue, unlock new markets, reduce OpEx, and enhance your firm's EBITDA and enterprise valuation.
           </p>
           <Link href="/contact" className="teeva-btn-gold">
             Book a Strategy Assessment

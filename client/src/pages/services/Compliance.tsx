@@ -7,15 +7,17 @@ export default function Compliance() {
     <ServicePage
       label="Advisory Services"
       headline="Compliance Advisory"
-      subheadline="Proactive compliance programs that transform regulatory requirements into revenue enablers."
-      problem="Mid-market companies are losing enterprise deals because they cannot produce the compliance documentation that enterprise buyers require. Most compliance firms confuse audit preparation with compliance management. They help you pass a test, not build a program. The result is a compliance posture that is reactive, fragile, and disconnected from the commercial strategy it is supposed to support."
-      solution="We transform compliance from a cost center into a revenue enabler. We build proactive compliance programs — including HIPAA, CMMC, SOC 2, and FedRAMP — that directly unblock enterprise pre-sales cycles and secure commercial market fit. We have built inaugural FedRAMP and SOC 2 authorizations from the ground up that directly accelerated enterprise sales and created measurable enterprise value."
+      subheadline="Compliance programs that unlock new markets, accelerate enterprise revenue, and enhance valuation multiples."
+      problem="Mid-market companies are losing enterprise contracts and federal opportunities because they cannot demonstrate the compliance posture that sophisticated buyers require. Most compliance firms confuse audit preparation with compliance management — they help you pass a test, not build a commercial asset. The result is compliance investment that generates cost but no revenue."
+      solution="We build compliance programs that function as commercial weapons. FedRAMP, SOC 2, HIPAA, and CMMC authorizations are not regulatory burdens — they are the market access credentials that unlock federal contracts, close enterprise deals, and command premium valuation multiples from acquirers and investors. We have built inaugural FedRAMP and SOC 2 authorizations from the ground up that directly accelerated enterprise sales cycles and created measurable enterprise value."
       deliverables={[
-        "Compliance Gap Assessment",
+        "Commercial Compliance Gap Assessment",
         "Compliance Program Design and Management",
+        "FedRAMP, SOC 2, HIPAA, and CMMC Authorization",
         "Policy and Procedure Development",
         "Audit Preparation and Support",
-        "Ongoing Compliance Monitoring",
+        "Compliance as a Sales Enablement Asset",
+        "Ongoing Compliance Monitoring and Reporting",
       ]}
       retainerCopy="Compliance Advisory engagements begin at $5,000/month. Scope and investment are tailored to the complexity of the engagement — contact us for a custom assessment. We do not offer hourly consulting or one-time project engagements."
       anchor="From $5,000/month"
