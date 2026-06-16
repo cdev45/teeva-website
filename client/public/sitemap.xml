@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://teeva.co/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://teeva.co/advisory</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://teeva.co/advisory/fractional-cio</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://teeva.co/advisory/cybersecurity</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://teeva.co/advisory/ai-transformation</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://teeva.co/advisory/compliance</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://teeva.co/advisory/go-to-market</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://teeva.co/methodology</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://teeva.co/resources</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://teeva.co/wellness</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://teeva.co/leadership</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://teeva.co/contact</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://teeva.co/privacy</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://teeva.co/terms</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://teeva.co/cookies</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+</urlset>
