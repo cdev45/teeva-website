@@ -86,6 +86,7 @@ export default function Footer() {
                 { name: "Foundation OS", href: "/os/foundation" },
                 { name: "Growth OS", href: "/os/growth" },
                 { name: "Enterprise OS", href: "/os/enterprise" },
+                { name: "Sustain Tier", href: "/os/sustain" },
                 { name: "Book a Gap Analysis", href: "/contact" },
               ].map((link) => (
                 <li key={link.href}>

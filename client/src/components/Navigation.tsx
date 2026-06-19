@@ -15,6 +15,7 @@ const osTiers = [
   { name: "Foundation OS", href: "/os/foundation", desc: "From $8,000/month" },
   { name: "Growth OS", href: "/os/growth", desc: "From $14,000/month" },
   { name: "Enterprise OS", href: "/os/enterprise", desc: "From $22,000/month" },
+  { name: "Sustain Tier", href: "/os/sustain", desc: "From $6,000/month" },
   { name: "View All Tiers", href: "/os", desc: "" },
 ];
 

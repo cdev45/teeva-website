@@ -28,6 +28,7 @@ import CommercialGrowthOS from "./pages/os/CommercialGrowthOS";
 import FoundationOS from "./pages/os/FoundationOS";
 import GrowthOS from "./pages/os/GrowthOS";
 import EnterpriseOS from "./pages/os/EnterpriseOS";
+import SustainTier from "./pages/os/SustainTier";
 
 // Other Pages
 import Leadership from "./pages/Leadership";
@@ -56,6 +57,7 @@ function Router() {
       <Route path="/os/foundation" component={FoundationOS} />
       <Route path="/os/growth" component={GrowthOS} />
       <Route path="/os/enterprise" component={EnterpriseOS} />
+      <Route path="/os/sustain" component={SustainTier} />
 
       {/* Company */}
       <Route path="/leadership" component={Leadership} />

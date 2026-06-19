@@ -64,6 +64,11 @@ const phases = [
     name: "Revenue Accelerator",
     desc: "We activate the commercial growth engine: market expansion strategy, enterprise sales cycle optimization, competitive positioning, and the go-to-market architecture that converts your technology and compliance investments into closed revenue.",
   },
+  {
+    number: "05",
+    name: "OS Sustain & Optimize",
+    desc: "Post-implementation continuity providing quarterly strategic board briefings, monthly compliance audits, and annual cost renegotiations to maintain your operational leverage and security posture.",
+  },
 ];
 
 const tiers = [
@@ -88,6 +93,13 @@ const tiers = [
     anchor: "From $22,000/month",
     href: "/os/enterprise",
     highlights: ["Full-Scope Commercial Transformation", "PE/Board-Level Reporting", "Multi-Market Expansion", "EBITDA & Valuation Advisory"],
+  },
+  {
+    name: "Sustain Tier",
+    tagline: "For existing customers requiring ongoing fractional oversight.",
+    anchor: "From $6,000/month",
+    href: "/os/sustain",
+    highlights: ["Quarterly Board Briefings", "Monthly Compliance Audits", "Annual Cost Renegotiation", "Capped Advisory Hours"],
   },
 ];
 
@@ -138,7 +150,7 @@ export default function CommercialGrowthOS() {
             className="text-white/80 text-lg leading-relaxed max-w-2xl mx-auto mt-6 mb-10"
             style={{ fontFamily: "'Inter', sans-serif" }}
           >
-            A proprietary, technology-enabled business system delivered via a standardized 4-Phase Implementation Framework for mid-market companies. Customers buy outcomes — not hours, not reports, not advice.
+            A proprietary, technology-enabled business system delivered via a standardized 5-Phase Implementation Framework for mid-market companies. Customers buy outcomes — not hours, not reports, not advice.
           </p>
           <Link href="/contact" className="teeva-btn-gold">
             Book a Commercial Gap Analysis
@@ -203,7 +215,7 @@ export default function CommercialGrowthOS() {
           </div>
         </section>
 
-        {/* Section 3 — The 4-Phase Framework */}
+        {/* Section 3 — The 5-Phase Framework */}
         <section className="py-20" style={{ backgroundColor: "#0F2439" }}>
           <div className="container">
             <div className="text-center mb-14 fade-up">
@@ -212,7 +224,7 @@ export default function CommercialGrowthOS() {
                 className="text-4xl md:text-5xl font-bold text-white"
                 style={{ fontFamily: "'Cormorant Garamond', serif" }}
               >
-                The 4-Phase Implementation Framework.
+                The 5-Phase Implementation Framework.
               </h2>
               <div className="teeva-gold-line" />
             </div>
@@ -261,7 +273,7 @@ export default function CommercialGrowthOS() {
                 className="text-4xl md:text-5xl font-bold"
                 style={{ fontFamily: "'Cormorant Garamond', serif", color: "#0F2439" }}
               >
-                Three Tiers. One Methodology.
+                Four Tiers. One Methodology.
               </h2>
               <div className="teeva-gold-line" />
               <p
