@@ -16,7 +16,7 @@ export default function Footer() {
           {/* Column 1 — Brand */}
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-3 mb-4">
-              <img src="/manus-storage/teeva-logo_18bfea62.png" alt="TEEVA" className="h-10 w-auto" />
+              <img src="/teeva-logo.png" alt="TEEVA" className="h-10 w-auto" />
               <span
                 className="text-white font-bold text-lg tracking-widest"
                 style={{ fontFamily: "'Cormorant Garamond', serif", letterSpacing: "0.15em" }}
