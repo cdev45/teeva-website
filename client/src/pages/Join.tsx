@@ -4,7 +4,6 @@
  * Routes to Google Sheets via webhook (placeholder endpoint)
  */
 
-import { useState } from "react";
 import { Link } from "wouter";
 
 const HERO_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663490541487/oNZTLoLQKpWBdVZWntoGbm/teeva-hero-main-etAuiCGcpMpRU7MvCHPuw4.webp";
@@ -18,24 +17,6 @@ const benefits = [
 ];
 
 export default function Join() {
-  const [form, setForm] = useState({ firstName: "", lastName: "", email: "", company: "", title: "" });
-  const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-    // TODO: Replace with Google Sheets webhook endpoint
-    // await fetch("YOUR_GOOGLE_SHEETS_WEBHOOK_ENDPOINT", { method: "POST", body: JSON.stringify(form) });
-    await new Promise((r) => setTimeout(r, 600));
-    setLoading(false);
-    setSubmitted(true);
-  };
-
   return (
     <div className="min-h-screen">
 
@@ -113,128 +94,33 @@ export default function Join() {
               </div>
             </div>
 
-            {/* Form */}
+            {/* Form Replacement (Link) */}
             <div>
-              {submitted ? (
-                <div
-                  className="p-10 text-center"
-                  style={{ backgroundColor: "#0F2439", borderTop: "3px solid #D4AF37" }}
+              <div
+                className="p-10 text-center flex flex-col items-center justify-center h-full min-h-[400px]"
+                style={{ backgroundColor: "#F4F5F7", borderTop: "3px solid #D4AF37" }}
+              >
+                <h3
+                  className="text-2xl font-bold mb-4"
+                  style={{ fontFamily: "'Cormorant Garamond', serif", color: "#0F2439" }}
                 >
-                  <div
-                    className="text-4xl mb-4"
-                    style={{ color: "#D4AF37" }}
-                  >
-                    ✓
-                  </div>
-                  <h3
-                    className="text-2xl font-bold text-white mb-3"
-                    style={{ fontFamily: "'Cormorant Garamond', serif" }}
-                  >
-                    Welcome to the Community.
-                  </h3>
-                  <p
-                    className="text-white/70 text-sm leading-relaxed mb-6"
-                    style={{ fontFamily: "'Inter', sans-serif" }}
-                  >
-                    You now have access to the full resource library. Check your inbox for your welcome email with direct links to our most popular frameworks.
-                  </p>
-                  <Link href="/resources" className="teeva-btn-gold">
-                    Access the Resource Library
-                  </Link>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div
-                    className="p-8"
-                    style={{ backgroundColor: "#F4F5F7", borderTop: "3px solid #D4AF37" }}
-                  >
-                    <h3
-                      className="text-2xl font-bold mb-6"
-                      style={{ fontFamily: "'Cormorant Garamond', serif", color: "#0F2439" }}
-                    >
-                      Create Your Free Account
-                    </h3>
-
-                    <div className="grid grid-cols-2 gap-4 mb-4">
-                      <div>
-                        <label
-                          className="block text-xs font-semibold uppercase tracking-wide mb-1"
-                          style={{ color: "#0F2439", fontFamily: "'Inter', sans-serif" }}
-                        >
-                          First Name *
-                        </label>
-                        <input
-                          type="text"
-                          name="firstName"
-                          value={form.firstName}
-                          onChange={handleChange}
-                          required
-                          className="w-full px-4 py-3 text-sm border focus:outline-none focus:border-gray-400"
-                          style={{ borderColor: "#E2E8F0", fontFamily: "'Inter', sans-serif", backgroundColor: "#FFFFFF" }}
-                        />
-                      </div>
-                      <div>
-                        <label
-                          className="block text-xs font-semibold uppercase tracking-wide mb-1"
-                          style={{ color: "#0F2439", fontFamily: "'Inter', sans-serif" }}
-                        >
-                          Last Name *
-                        </label>
-                        <input
-                          type="text"
-                          name="lastName"
-                          value={form.lastName}
-                          onChange={handleChange}
-                          required
-                          className="w-full px-4 py-3 text-sm border focus:outline-none focus:border-gray-400"
-                          style={{ borderColor: "#E2E8F0", fontFamily: "'Inter', sans-serif", backgroundColor: "#FFFFFF" }}
-                        />
-                      </div>
-                    </div>
-
-                    {[
-                      { name: "email", label: "Email Address *", type: "email", required: true },
-                      { name: "company", label: "Company Name *", type: "text", required: true },
-                      { name: "title", label: "Job Title", type: "text", required: false },
-                    ].map((field) => (
-                      <div key={field.name} className="mb-4">
-                        <label
-                          className="block text-xs font-semibold uppercase tracking-wide mb-1"
-                          style={{ color: "#0F2439", fontFamily: "'Inter', sans-serif" }}
-                        >
-                          {field.label}
-                        </label>
-                        <input
-                          type={field.type}
-                          name={field.name}
-                          value={form[field.name as keyof typeof form]}
-                          onChange={handleChange}
-                          required={field.required}
-                          className="w-full px-4 py-3 text-sm border focus:outline-none focus:border-gray-400"
-                          style={{ borderColor: "#E2E8F0", fontFamily: "'Inter', sans-serif", backgroundColor: "#FFFFFF" }}
-                        />
-                      </div>
-                    ))}
-
-                    <button
-                      type="submit"
-                      disabled={loading}
-                      className="teeva-btn-gold w-full mt-2"
-                    >
-                      {loading ? "Joining..." : "Join the Community"}
-                    </button>
-
-                    <p
-                      className="text-xs mt-4 text-center"
-                      style={{ color: "#4A5568", fontFamily: "'Inter', sans-serif" }}
-                    >
-                      By joining, you agree to our{" "}
-                      <Link href="/privacy" className="underline">Privacy Policy</Link>.
-                      {" "}No spam. Unsubscribe at any time.
-                    </p>
-                  </div>
-                </form>
-              )}
+                  Join the TEEVA Elite Executives Group
+                </h3>
+                <p
+                  className="text-sm leading-relaxed mb-8"
+                  style={{ color: "#4A5568", fontFamily: "'Inter', sans-serif", maxWidth: "300px" }}
+                >
+                  Click below to request access to our private Google Group.
+                </p>
+                <a 
+                  href="https://groups.google.com/g/teeva-group/about" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="teeva-btn-gold"
+                >
+                  Join the Group
+                </a>
+              </div>
             </div>
 
           </div>
