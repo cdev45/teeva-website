@@ -32,7 +32,7 @@ export default function Terms() {
           <p className="mb-6">These Terms of Service are governed by the laws of the State of Florida, United States, without regard to conflict of law provisions.</p>
 
           <h2 style={{ fontFamily: "'Cormorant Garamond', serif", color: "#0F2439", fontSize: "1.5rem", marginBottom: "0.75rem" }}>7. Contact</h2>
-          <p>For questions about these terms, contact us at <a href="mailto:info@teeva.co" style={{ color: "#D4AF37" }}>info@teeva.co</a>.</p>
+          <p>For questions about these terms, contact us at <a href="mailto:privacy@teeva.co" style={{ color: "#D4AF37" }}>privacy@teeva.co</a>.</p>
         </div>
       </section>
     </div>

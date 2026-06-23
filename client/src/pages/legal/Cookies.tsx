@@ -30,7 +30,7 @@ export default function Cookies() {
           <p className="mb-6">Our website may use analytics services that set their own cookies. These third-party services have their own privacy policies governing their use of cookies. We do not control these cookies directly.</p>
 
           <h2 style={{ fontFamily: "'Cormorant Garamond', serif", color: "#0F2439", fontSize: "1.5rem", marginBottom: "0.75rem" }}>5. Contact</h2>
-          <p>For questions about our cookie practices, contact us at <a href="mailto:info@teeva.co" style={{ color: "#D4AF37" }}>info@teeva.co</a>.</p>
+          <p>For questions about our cookie practices, contact us at <a href="mailto:privacy@teeva.co" style={{ color: "#D4AF37" }}>privacy@teeva.co</a>.</p>
         </div>
       </section>
     </div>
