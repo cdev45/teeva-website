@@ -32,11 +32,11 @@ export default function Footer() {
             </p>
             <div className="space-y-1">
               <a
-                href="mailto:support@teeva.co"
+                href="mailto:info@teeva.co"
                 className="block text-sm hover:text-white transition-colors"
                 style={{ color: "#D4AF37", fontFamily: "'Inter', sans-serif" }}
               >
-                support@teeva.co
+                info@teeva.co
               </a>
               <p className="text-sm" style={{ color: "rgba(255,255,255,0.5)", fontFamily: "'Inter', sans-serif" }}>
                 St. Augustine, FL

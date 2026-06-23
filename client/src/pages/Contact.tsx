@@ -10,6 +10,7 @@ export default function Contact() {
     revenue: "", service: "", message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const el = sectionRef.current;
@@ -28,9 +29,22 @@ export default function Contact() {
     return () => observer.disconnect();
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+
+    try {
+      await fetch("https://script.google.com/macros/s/AKfycbycLWIjxUZ1x_gNRb8wyj5qui_FArvzyfAOrYKxiTtsVRnx7cgwLpCAXOYY4TLz3RTbXA/exec", {
+        method: "POST",
+        body: JSON.stringify(form),
+      });
+      setSubmitted(true);
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("Failed to submit form. Please try again or email us directly at info@teeva.co.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const inputClass = "w-full px-4 py-3 text-sm border focus:outline-none focus:ring-1 focus:ring-yellow-600 bg-white";
@@ -199,8 +213,8 @@ export default function Contact() {
                   </div>
 
                   <div className="fade-up">
-                    <button type="submit" className="teeva-btn-gold">
-                      Submit Request
+                    <button type="submit" disabled={loading} className="teeva-btn-gold">
+                      {loading ? "Submitting..." : "Submit Request"}
                     </button>
                     <p className="text-xs mt-3" style={{ color: "#4A5568", fontFamily: "'Inter', sans-serif" }}>
                       By submitting, you agree to our{" "}
@@ -244,11 +258,11 @@ export default function Contact() {
                     <div>
                       <p className="text-xs uppercase tracking-wide mb-1" style={{ color: "#4A5568", fontFamily: "'Inter', sans-serif" }}>Email</p>
                       <a
-                        href="mailto:support@teeva.co"
+                        href="mailto:info@teeva.co"
                         className="text-sm font-medium hover:underline"
                         style={{ color: "#0F2439", fontFamily: "'Inter', sans-serif" }}
                       >
-                        support@teeva.co
+                        info@teeva.co
                       </a>
                     </div>
                     <div>

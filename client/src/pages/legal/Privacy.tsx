@@ -34,13 +34,13 @@ export default function Privacy() {
           <p>We use functional cookies required for site operation, which are set before consent. Analytics and marketing cookies are only set after you provide explicit consent via our cookie consent banner. You may withdraw consent at any time by clearing your browser cookies. For full details, see our <Link href="/cookies" style={{ color: "#D4AF37" }}>Cookie Policy</Link>.</p>
 
           <h2 style={{ fontFamily: "'Cormorant Garamond', serif", color: "#0F2439" }}>6. Your Rights</h2>
-          <p>Under GDPR and CCPA, you have the right to access, correct, or delete your personal data. To exercise these rights, contact us at <a href="mailto:support@teeva.co" style={{ color: "#D4AF37" }}>support@teeva.co</a>. We will respond to all requests within 30 days. You also have the right to opt out of any marketing communications at any time by clicking the unsubscribe link in any email we send.</p>
+          <p>Under GDPR and CCPA, you have the right to access, correct, or delete your personal data. To exercise these rights, contact us at <a href="mailto:info@teeva.co" style={{ color: "#D4AF37" }}>info@teeva.co</a>. We will respond to all requests within 30 days. You also have the right to opt out of any marketing communications at any time by clicking the unsubscribe link in any email we send.</p>
 
           <h2 style={{ fontFamily: "'Cormorant Garamond', serif", color: "#0F2439" }}>7. Data Retention</h2>
-          <p>We retain your personal data for as long as necessary to provide our services and comply with legal obligations. You may request deletion of your data at any time by contacting us at support@teeva.co.</p>
+          <p>We retain your personal data for as long as necessary to provide our services and comply with legal obligations. You may request deletion of your data at any time by contacting us at info@teeva.co.</p>
 
           <h2 style={{ fontFamily: "'Cormorant Garamond', serif", color: "#0F2439" }}>8. Contact</h2>
-          <p>For privacy-related inquiries, contact us at <a href="mailto:support@teeva.co" style={{ color: "#D4AF37" }}>support@teeva.co</a> or write to us at TEEVA, St. Augustine, FL.</p>
+          <p>For privacy-related inquiries, contact us at <a href="mailto:info@teeva.co" style={{ color: "#D4AF37" }}>info@teeva.co</a> or write to us at TEEVA, St. Augustine, FL.</p>
         </div>
       </section>
     </div>
