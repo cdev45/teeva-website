@@ -57,7 +57,7 @@ export default function Leadership() {
               <div
                 className="aspect-square bg-cover bg-center bg-top flex items-end"
                 style={{
-                  backgroundImage: `url(/manus-storage/chris-denoia-headshot_ca084511.webp)`,
+                  backgroundImage: `url(/cd-headshot-v2.jpg)`,
                   backgroundColor: "#F4F5F7",
                 }}
               >

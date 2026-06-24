@@ -7,7 +7,7 @@ export default function Contact() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [form, setForm] = useState({
     firstName: "", lastName: "", company: "", jobTitle: "",
-    revenue: "", service: "", message: "",
+    emailAddress: "", phoneNumber: "", revenue: "", service: "", message: "",
   });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -34,9 +34,17 @@ export default function Contact() {
     setLoading(true);
 
     try {
+      const now = new Date();
+      const payload = {
+        ...form,
+        date: now.toLocaleDateString(),
+        time: now.toLocaleTimeString()
+      };
+
       await fetch("https://script.google.com/macros/s/AKfycbycLWIjxUZ1x_gNRb8wyj5qui_FArvzyfAOrYKxiTtsVRnx7cgwLpCAXOYY4TLz3RTbXA/exec", {
         method: "POST",
-        body: JSON.stringify(form),
+        mode: "no-cors",
+        body: JSON.stringify(payload),
       });
       setSubmitted(true);
     } catch (error) {
@@ -79,7 +87,7 @@ export default function Contact() {
             {/* Form */}
             <div className="lg:col-span-2">
               {submitted ? (
-                <div className="fade-up p-10 text-center" style={{ backgroundColor: "#F4F5F7" }}>
+                <div className="p-10 text-center" style={{ backgroundColor: "#F4F5F7" }}>
                   <div className="teeva-gold-line" />
                   <h3
                     className="text-3xl font-bold mt-4 mb-3"
@@ -88,7 +96,9 @@ export default function Contact() {
                     Message Received.
                   </h3>
                   <p className="text-base" style={{ color: "#4A5568", fontFamily: "'Inter', sans-serif" }}>
-                    Thank you for reaching out. A member of our team will respond within one business day.
+                    Thank you for reaching out to TEEVA. This confirms the form submitted successfully. A member of the team will reach out to you shortly.<br /><br />
+                    Warmly,<br />
+                    The TEEVA Team
                   </p>
                 </div>
               ) : (
@@ -129,11 +139,10 @@ export default function Contact() {
                   <div className="fade-up grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-xs font-medium mb-2 uppercase tracking-wide" style={{ color: "#4A5568", fontFamily: "'Inter', sans-serif" }}>
-                        Company Name *
+                        Company Name
                       </label>
                       <input
                         type="text"
-                        required
                         value={form.company}
                         onChange={(e) => setForm({ ...form, company: e.target.value })}
                         className={inputClass}
@@ -142,11 +151,10 @@ export default function Contact() {
                     </div>
                     <div>
                       <label className="block text-xs font-medium mb-2 uppercase tracking-wide" style={{ color: "#4A5568", fontFamily: "'Inter', sans-serif" }}>
-                        Job Title *
+                        Job Title
                       </label>
                       <input
                         type="text"
-                        required
                         value={form.jobTitle}
                         onChange={(e) => setForm({ ...form, jobTitle: e.target.value })}
                         className={inputClass}
@@ -158,10 +166,37 @@ export default function Contact() {
                   <div className="fade-up grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-xs font-medium mb-2 uppercase tracking-wide" style={{ color: "#4A5568", fontFamily: "'Inter', sans-serif" }}>
-                        Company Revenue Range *
+                        Email Address *
+                      </label>
+                      <input
+                        type="email"
+                        required
+                        value={form.emailAddress}
+                        onChange={(e) => setForm({ ...form, emailAddress: e.target.value })}
+                        className={inputClass}
+                        style={inputStyle}
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-xs font-medium mb-2 uppercase tracking-wide" style={{ color: "#4A5568", fontFamily: "'Inter', sans-serif" }}>
+                        Phone Number
+                      </label>
+                      <input
+                        type="tel"
+                        value={form.phoneNumber}
+                        onChange={(e) => setForm({ ...form, phoneNumber: e.target.value })}
+                        className={inputClass}
+                        style={inputStyle}
+                      />
+                    </div>
+                  </div>
+
+                  <div className="fade-up grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-xs font-medium mb-2 uppercase tracking-wide" style={{ color: "#4A5568", fontFamily: "'Inter', sans-serif" }}>
+                        Company Revenue Range
                       </label>
                       <select
-                        required
                         value={form.revenue}
                         onChange={(e) => setForm({ ...form, revenue: e.target.value })}
                         className={inputClass}
@@ -177,10 +212,9 @@ export default function Contact() {
                     </div>
                     <div>
                       <label className="block text-xs font-medium mb-2 uppercase tracking-wide" style={{ color: "#4A5568", fontFamily: "'Inter', sans-serif" }}>
-                        Service of Interest *
+                        Service of Interest
                       </label>
                       <select
-                        required
                         value={form.service}
                         onChange={(e) => setForm({ ...form, service: e.target.value })}
                         className={inputClass}
@@ -229,26 +263,17 @@ export default function Contact() {
             {/* Sidebar */}
             <div className="lg:col-span-1">
               <div className="fade-up space-y-8">
-                {/* Book Direct */}
+                {/* Client Impact Testimonial */}
                 <div className="p-8" style={{ backgroundColor: "#0F2439" }}>
-                  <p className="teeva-section-label mb-3">Prefer to Book Direct?</p>
-                  <h3
-                    className="text-xl font-bold text-white mb-3"
-                    style={{ fontFamily: "'Cormorant Garamond', serif" }}
-                  >
-                    Schedule a Commercial Gap Analysis
-                  </h3>
-                  <p className="text-white/60 text-sm leading-relaxed mb-6" style={{ fontFamily: "'Inter', sans-serif" }}>
-                    Book a 30-minute complimentary Commercial Gap Analysis directly on our calendar.
-                  </p>
-                  <a
-                    href={BOOKING_LINK}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="teeva-btn-gold text-xs block text-center"
-                  >
-                    Book on Calendar
-                  </a>
+                  <p className="teeva-section-label mb-4">Client Impact</p>
+                  <div className="text-white/90 leading-relaxed space-y-4" style={{ fontFamily: "'Inter', sans-serif" }}>
+                    <p className="italic text-sm">
+                      "TEEVA transformed our business intelligence by integrating custom AI automation and structured operational workflows. This delivered an <span className="text-[#C1A059] font-semibold">80% acceleration</span> in our market analysis capabilities, enabling faster, high-conviction strategic execution for our clients."
+                    </p>
+                    <p className="text-xs uppercase tracking-wider text-white/50 mt-4">
+                      — Client Partner
+                    </p>
+                  </div>
                 </div>
 
                 {/* Contact Info */}

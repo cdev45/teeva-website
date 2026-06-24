@@ -6,14 +6,16 @@ const WELLNESS_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663490541487
 
 export default function Wellness() {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const [email, setEmail] = useState("");
+  const [form, setForm] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    newsletterConsent: false,
+  });
   const [submitted, setSubmitted] = useState(false);
-  const [gateEmail, setGateEmail] = useState("");
-  const [gateSubmitted, setGateSubmitted] = useState(false);
   const [gateOpen, setGateOpen] = useState(false);
   const [selectedProgram, setSelectedProgram] = useState("");
-  const [notifyEmail, setNotifyEmail] = useState("");
-  const [notifySubmitted, setNotifySubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const el = sectionRef.current;
@@ -36,6 +38,36 @@ export default function Wellness() {
     setSelectedProgram(program);
     setGateOpen(true);
   };
+
+  const handleGate = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    try {
+      const scriptUrl = "https://script.google.com/macros/s/AKfycbyJAaNXIuWGmhSto8Pf79fHoYx-sgXulC40-c7DUwkC6EmMTcd6tfT9OvJPgxxT9dxMcA/exec";
+      
+      const now = new Date();
+      const payload = {
+        ...form,
+        date: now.toLocaleDateString(),
+        time: now.toLocaleTimeString()
+      };
+
+      await fetch(scriptUrl, {
+        method: "POST",
+        mode: "no-cors",
+        body: JSON.stringify(payload),
+      });
+      setSubmitted(true);
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("Failed to submit. Please email info@teeva.co directly.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const inputClass = "w-full px-4 py-3 text-sm border focus:outline-none focus:ring-1 focus:ring-yellow-600 bg-white";
+  const inputStyle = { borderColor: "#E2E8F0", fontFamily: "'Inter', sans-serif", color: "#0F2439" };
 
   return (
     <div className="min-h-screen">
@@ -89,7 +121,7 @@ export default function Wellness() {
               {/* Book Cover */}
               <div className="mb-6 flex justify-center">
                 <img
-                  src="/manus-storage/gh1-book-cover_b8af1bd2.webp"
+                  src="/mock_illustration_02.png"
                   alt="Great Body, Healthy Life book cover"
                   className="h-48 w-auto object-contain"
                   style={{ filter: "drop-shadow(0 8px 24px rgba(0,0,0,0.15))" }}
@@ -147,15 +179,7 @@ export default function Wellness() {
               className="fade-up p-8"
               style={{ backgroundColor: "#F4F5F7", borderTop: "3px solid #0F2439", transitionDelay: "80ms" }}
             >
-              {/* Draft Book Cover */}
-              <div className="mb-6 flex justify-center">
-                <img
-                  src="/manus-storage/gh2-book-cover-nobg_1efae168.png"
-                  alt="Great Body, Healthy Life: The Elite Executive Wellness Program — draft cover"
-                  className="h-48 w-auto object-contain"
-                  style={{ mixBlendMode: "multiply" as React.CSSProperties["mixBlendMode"] }}
-                />
-              </div>
+
               <p
                 className="text-xs font-semibold uppercase tracking-widest mb-3 px-2 py-1 inline-block"
                 style={{ color: "rgba(255,255,255,0.8)", backgroundColor: "#0F2439", fontFamily: "'Inter', sans-serif" }}
@@ -194,45 +218,7 @@ export default function Wellness() {
                   </li>
                 ))}
               </ul>
-              {notifySubmitted ? (
-                <div
-                  className="p-4 text-center"
-                  style={{ backgroundColor: "#0F2439" }}
-                >
-                  <p className="text-white text-sm" style={{ fontFamily: "'Inter', sans-serif" }}>
-                    You're on the list. We'll notify you when it launches.
-                  </p>
-                </div>
-              ) : (
-                <form
-                  onSubmit={(e) => {
-                    e.preventDefault();
-                    if (notifyEmail) {
-                      // TODO: Replace with Google Sheets webhook endpoint
-                      // fetch("YOUR_GOOGLE_SHEETS_WEBHOOK_ENDPOINT", { method: "POST", body: JSON.stringify({ email: notifyEmail, source: "wellness-book2-notify", timestamp: new Date().toISOString() }) });
-                      setNotifySubmitted(true);
-                    }
-                  }}
-                  className="flex flex-col gap-3"
-                >
-                  <input
-                    type="email"
-                    value={notifyEmail}
-                    onChange={(e) => setNotifyEmail(e.target.value)}
-                    placeholder="Your email address"
-                    required
-                    className="px-4 py-3 text-sm border focus:outline-none"
-                    style={{ borderColor: "#0F2439", fontFamily: "'Inter', sans-serif", backgroundColor: "#FFFFFF" }}
-                  />
-                  <button type="submit" className="teeva-btn-outline-navy text-xs">
-                    Notify Me When Available
-                  </button>
-                  <p className="text-xs" style={{ color: "#4A5568", fontFamily: "'Inter', sans-serif" }}>
-                    No spam. We'll send one email when it launches.{" "}
-                    <Link href="/privacy" className="underline">Privacy Policy</Link>
-                  </p>
-                </form>
-              )}
+
             </div>
 
           </div>
@@ -250,7 +236,7 @@ export default function Wellness() {
             className="bg-white p-10 max-w-md w-full"
             onClick={(e) => e.stopPropagation()}
           >
-            {gateSubmitted ? (
+            {submitted ? (
               <div className="text-center">
                 <div className="teeva-gold-line" />
                 <h3
@@ -263,7 +249,7 @@ export default function Wellness() {
                   Thank you. Your {selectedProgram} access link has been sent to your email.
                 </p>
                 <button
-                  onClick={() => { setGateOpen(false); setGateSubmitted(false); setGateEmail(""); }}
+                  onClick={() => { setGateOpen(false); setSubmitted(false); setForm({ firstName: "", lastName: "", email: "", newsletterConsent: false }); }}
                   className="teeva-btn-gold mt-6 text-xs"
                 >
                   Close
@@ -276,29 +262,63 @@ export default function Wellness() {
                   className="text-2xl font-bold mb-3"
                   style={{ fontFamily: "'Cormorant Garamond', serif", color: "#0F2439" }}
                 >
-                  Enter your email to access this program.
+                  Enter your details to access this program.
                 </h3>
-                <form
-                  onSubmit={(e) => { e.preventDefault(); if (gateEmail) setGateSubmitted(true); }}
-                  className="flex flex-col gap-3 mt-6"
-                >
-                  <input
-                    type="email"
-                    value={gateEmail}
-                    onChange={(e) => setGateEmail(e.target.value)}
-                    placeholder="Your email address"
-                    required
-                    className="px-4 py-3 text-sm border focus:outline-none"
-                    style={{ borderColor: "#0F2439", fontFamily: "'Inter', sans-serif" }}
-                  />
-                  <button type="submit" className="teeva-btn-gold text-xs">
-                    Access Program
+                <p className="text-sm mb-6" style={{ color: "#4A5568", fontFamily: "'Inter', sans-serif" }}>
+                  Access is gated behind a brief capture. You will receive a direct link to the program and a soft introduction to our advisory services.
+                </p>
+                <form onSubmit={handleGate} className="flex flex-col gap-4">
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-xs font-medium mb-1 uppercase tracking-wide" style={{ color: "#4A5568", fontFamily: "'Inter', sans-serif" }}>First Name *</label>
+                      <input
+                        type="text"
+                        value={form.firstName}
+                        onChange={(e) => setForm({ ...form, firstName: e.target.value })}
+                        required
+                        className={inputClass}
+                        style={inputStyle}
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-xs font-medium mb-1 uppercase tracking-wide" style={{ color: "#4A5568", fontFamily: "'Inter', sans-serif" }}>Last Name *</label>
+                      <input
+                        type="text"
+                        value={form.lastName}
+                        onChange={(e) => setForm({ ...form, lastName: e.target.value })}
+                        required
+                        className={inputClass}
+                        style={inputStyle}
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <label className="block text-xs font-medium mb-1 uppercase tracking-wide" style={{ color: "#4A5568", fontFamily: "'Inter', sans-serif" }}>Email Address *</label>
+                    <input
+                      type="email"
+                      value={form.email}
+                      onChange={(e) => setForm({ ...form, email: e.target.value })}
+                      required
+                      className={inputClass}
+                      style={inputStyle}
+                    />
+                  </div>
+                  <div className="flex items-start gap-2 mt-2">
+                    <input
+                      type="checkbox"
+                      id="newsletterConsent"
+                      checked={form.newsletterConsent}
+                      onChange={(e) => setForm({ ...form, newsletterConsent: e.target.checked })}
+                      className="mt-1"
+                    />
+                    <label htmlFor="newsletterConsent" className="text-xs leading-tight" style={{ color: "#4A5568", fontFamily: "'Inter', sans-serif" }}>
+                      I acknowledge the <Link href="/privacy" className="underline">Privacy Policy</Link> and approve to receive the TEEVA newsletter.
+                    </label>
+                  </div>
+                  <button type="submit" disabled={loading} className="teeva-btn-gold text-xs mt-2">
+                    {loading ? "Submitting..." : "Access Program"}
                   </button>
                 </form>
-                <p className="text-xs mt-3" style={{ color: "#4A5568", fontFamily: "'Inter', sans-serif" }}>
-                  By submitting, you agree to our{" "}
-                  <Link href="/privacy" className="underline">Privacy Policy</Link>.
-                </p>
               </>
             )}
           </div>

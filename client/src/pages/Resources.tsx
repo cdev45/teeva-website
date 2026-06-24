@@ -52,11 +52,15 @@ const categories = [
 
 export default function Resources() {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const [email, setEmail] = useState("");
+  const [form, setForm] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    newsletterConsent: false,
+  });
   const [submitted, setSubmitted] = useState(false);
-  const [gateEmail, setGateEmail] = useState("");
-  const [gateSubmitted, setGateSubmitted] = useState(false);
   const [gateOpen, setGateOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const el = sectionRef.current;
@@ -75,12 +79,38 @@ export default function Resources() {
     return () => observer.disconnect();
   }, []);
 
-  const handleGate = (e: React.FormEvent) => {
+  const handleGate = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (gateEmail) {
-      setGateSubmitted(true);
+    setLoading(true);
+    try {
+      // TODO: Replace this URL with the new Google Apps Script Web App URL
+      const scriptUrl = "https://script.google.com/macros/s/AKfycbyJAaNXIuWGmhSto8Pf79fHoYx-sgXulC40-c7DUwkC6EmMTcd6tfT9OvJPgxxT9dxMcA/exec";
+      
+      if (scriptUrl !== "YOUR_APPS_SCRIPT_URL") {
+        const now = new Date();
+        const payload = {
+          ...form,
+          date: now.toLocaleDateString(),
+          time: now.toLocaleTimeString()
+        };
+
+        await fetch(scriptUrl, {
+          method: "POST",
+          mode: "no-cors",
+          body: JSON.stringify(payload),
+        });
+      }
+      setSubmitted(true);
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("Failed to submit. Please email info@teeva.co directly.");
+    } finally {
+      setLoading(false);
     }
   };
+
+  const inputClass = "w-full px-4 py-3 text-sm border focus:outline-none focus:ring-1 focus:ring-yellow-600 bg-white";
+  const inputStyle = { borderColor: "#E2E8F0", fontFamily: "'Inter', sans-serif", color: "#0F2439" };
 
   return (
     <div className="min-h-screen">
@@ -177,7 +207,7 @@ export default function Resources() {
             className="bg-white p-10 max-w-md w-full"
             onClick={(e) => e.stopPropagation()}
           >
-            {gateSubmitted ? (
+            {submitted ? (
               <div className="text-center">
                 <div className="teeva-gold-line" />
                 <h3
@@ -190,7 +220,7 @@ export default function Resources() {
                   Thank you. A confirmation with your resource link has been sent to your email.
                 </p>
                 <button
-                  onClick={() => { setGateOpen(false); setGateSubmitted(false); setGateEmail(""); }}
+                  onClick={() => { setGateOpen(false); setSubmitted(false); setForm({ firstName: "", lastName: "", email: "", newsletterConsent: false }); }}
                   className="teeva-btn-gold mt-6 text-xs"
                 >
                   Close
@@ -203,29 +233,63 @@ export default function Resources() {
                   className="text-2xl font-bold mb-3"
                   style={{ fontFamily: "'Cormorant Garamond', serif", color: "#0F2439" }}
                 >
-                  Enter your email to access this resource.
+                  Enter your details to access this resource.
                 </h3>
                 <p className="text-sm mb-6" style={{ color: "#4A5568", fontFamily: "'Inter', sans-serif" }}>
-                  All downloadable resources are gated behind a brief email capture. You will receive a direct link and a soft introduction to our advisory services.
+                  All downloadable resources are gated behind a brief capture. You will receive a direct link and a soft introduction to our advisory services.
                 </p>
-                <form onSubmit={handleGate} className="flex flex-col gap-3">
-                  <input
-                    type="email"
-                    value={gateEmail}
-                    onChange={(e) => setGateEmail(e.target.value)}
-                    placeholder="Your email address"
-                    required
-                    className="px-4 py-3 text-sm border focus:outline-none"
-                    style={{ borderColor: "#0F2439", fontFamily: "'Inter', sans-serif" }}
-                  />
-                  <button type="submit" className="teeva-btn-gold text-xs">
-                    Access Resource
+                <form onSubmit={handleGate} className="flex flex-col gap-4">
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-xs font-medium mb-1 uppercase tracking-wide" style={{ color: "#4A5568", fontFamily: "'Inter', sans-serif" }}>First Name *</label>
+                      <input
+                        type="text"
+                        value={form.firstName}
+                        onChange={(e) => setForm({ ...form, firstName: e.target.value })}
+                        required
+                        className={inputClass}
+                        style={inputStyle}
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-xs font-medium mb-1 uppercase tracking-wide" style={{ color: "#4A5568", fontFamily: "'Inter', sans-serif" }}>Last Name *</label>
+                      <input
+                        type="text"
+                        value={form.lastName}
+                        onChange={(e) => setForm({ ...form, lastName: e.target.value })}
+                        required
+                        className={inputClass}
+                        style={inputStyle}
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <label className="block text-xs font-medium mb-1 uppercase tracking-wide" style={{ color: "#4A5568", fontFamily: "'Inter', sans-serif" }}>Email Address *</label>
+                    <input
+                      type="email"
+                      value={form.email}
+                      onChange={(e) => setForm({ ...form, email: e.target.value })}
+                      required
+                      className={inputClass}
+                      style={inputStyle}
+                    />
+                  </div>
+                  <div className="flex items-start gap-2 mt-2">
+                    <input
+                      type="checkbox"
+                      id="newsletterConsent"
+                      checked={form.newsletterConsent}
+                      onChange={(e) => setForm({ ...form, newsletterConsent: e.target.checked })}
+                      className="mt-1"
+                    />
+                    <label htmlFor="newsletterConsent" className="text-xs leading-tight" style={{ color: "#4A5568", fontFamily: "'Inter', sans-serif" }}>
+                      I acknowledge the <Link href="/privacy" className="underline">Privacy Policy</Link> and approve to receive the TEEVA newsletter.
+                    </label>
+                  </div>
+                  <button type="submit" disabled={loading} className="teeva-btn-gold text-xs mt-2">
+                    {loading ? "Submitting..." : "Access Resource"}
                   </button>
                 </form>
-                <p className="text-xs mt-3" style={{ color: "#4A5568", fontFamily: "'Inter', sans-serif" }}>
-                  By submitting, you agree to our{" "}
-                  <Link href="/privacy" className="underline">Privacy Policy</Link>.
-                </p>
               </>
             )}
           </div>
@@ -253,23 +317,11 @@ export default function Resources() {
               </p>
             </div>
           ) : (
-            <form
-              onSubmit={(e) => { e.preventDefault(); if (email) setSubmitted(true); }}
-              className="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto"
-            >
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Your executive email address"
-                required
-                className="flex-1 px-5 py-3 text-sm border focus:outline-none"
-                style={{ borderColor: "#0F2439", fontFamily: "'Inter', sans-serif" }}
-              />
-              <button type="submit" className="teeva-btn-gold flex-shrink-0">
-                Subscribe
+            <div className="flex justify-center">
+              <button onClick={() => setGateOpen(true)} className="teeva-btn-gold">
+                Join the Community
               </button>
-            </form>
+            </div>
           )}
         </div>
       </section>

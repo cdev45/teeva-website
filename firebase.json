@@ -6,6 +6,44 @@
       "**/.*",
       "**/node_modules/**"
     ],
+    "redirects": [
+      {
+        "source": "/resources/articles/entrepreneurship-and-the-future-of-u-s-innovation",
+        "destination": "/insights/entrepreneurship-and-the-future-of-us-innovation",
+        "type": 301
+      },
+      {
+        "source": "/resources/articles/the-15-trillion-ai-paradox-6-surprising-truths-separating-ai-leaders-from-the-laggards",
+        "destination": "/insights/the-15-trillion-ai-paradox-6-surprising-truths-separating-ai-leaders-from",
+        "type": 301
+      },
+      {
+        "source": "/resources/articles/learning-guide-for-cloud-best-practices",
+        "destination": "/insights",
+        "type": 301
+      },
+      {
+        "source": "/resources/articles/:slug",
+        "destination": "/insights/:slug",
+        "type": 301
+      },
+      {
+        "source": "/resources/articles",
+        "destination": "/insights",
+        "type": 301
+      }
+    ],
+    "headers": [
+      {
+        "source": "**/*.@(html)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "no-cache, no-store, must-revalidate"
+          }
+        ]
+      }
+    ],
     "rewrites": [
       {
         "source": "**",
