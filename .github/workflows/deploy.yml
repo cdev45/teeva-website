@@ -31,4 +31,4 @@ jobs:
       - name: Deploy to Firebase Hosting
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-        run: npx --yes firebase-tools deploy --only hosting --project teeva-website --non-interactive
+        run: npx --yes firebase-tools deploy --only hosting --project teeva-website --non-interactive --token $FIREBASE_TOKEN
